@@ -69,7 +69,7 @@ dbt run
 cd airflow/
 airflow scheduler & airflow webserver
 ```
-Access Airflow UI at: **http://localhost:8082**
+Access Airflow UI at: **http://localhost:8081**
 
 ### 5️⃣ Load Superset Dashboard
 ```bash
