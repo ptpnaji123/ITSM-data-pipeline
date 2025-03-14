@@ -1,0 +1,51 @@
+{
+    "slice_name": "Ticket Volume Trends",
+    "description": null,
+    "certified_by": null,
+    "certification_details": null,
+    "viz_type": "line",
+    "params": {
+        "datasource": "25__table",
+        "viz_type": "line",
+        "slice_id": 121,
+        "granularity_sqla": "created_timestamp",
+        "time_grain_sqla": "P1D",
+        "time_range": "No filter",
+        "metrics": [
+            "count"
+        ],
+        "adhoc_filters": [],
+        "groupby": [],
+        "row_limit": 50000,
+        "color_scheme": "supersetColors",
+        "show_brush": "auto",
+        "send_time_range": false,
+        "show_legend": true,
+        "rich_tooltip": true,
+        "show_markers": false,
+        "line_interpolation": "linear",
+        "x_axis_label": "Date",
+        "bottom_margin": "auto",
+        "x_ticks_layout": "auto",
+        "x_axis_format": "%d-%m-%Y %H:%M:%S",
+        "y_axis_label": "No. of Tickets Created",
+        "left_margin": "auto",
+        "y_axis_format": ",.1f",
+        "y_axis_bounds": [
+            null,
+            null
+        ],
+        "rolling_type": "None",
+        "comparison_type": "values",
+        "annotation_layers": [],
+        "extra_form_data": {},
+        "dashboards": [
+            12
+        ]
+    },
+    "query_context": "{\"datasource\":{\"id\":25,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":\"created_timestamp\",\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"having\":\"\",\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"count\"],\"annotation_layers\":[],\"row_limit\":50000,\"series_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"form_data\":{\"datasource\":\"25__table\",\"viz_type\":\"line\",\"slice_id\":121,\"granularity_sqla\":\"created_timestamp\",\"time_grain_sqla\":\"P1D\",\"time_range\":\"No filter\",\"metrics\":[\"count\"],\"adhoc_filters\":[],\"groupby\":[],\"row_limit\":50000,\"color_scheme\":\"supersetColors\",\"show_brush\":\"auto\",\"send_time_range\":false,\"show_legend\":true,\"rich_tooltip\":true,\"show_markers\":false,\"line_interpolation\":\"linear\",\"x_axis_label\":\"Date\",\"bottom_margin\":\"auto\",\"x_ticks_layout\":\"auto\",\"x_axis_format\":\"%d-%m-%Y %H:%M:%S\",\"y_axis_label\":\"No. of Tickets Created\",\"left_margin\":\"auto\",\"y_axis_format\":\",.1f\",\"y_axis_bounds\":[null,null],\"rolling_type\":\"None\",\"comparison_type\":\"values\",\"annotation_layers\":[],\"extra_form_data\":{},\"dashboards\":[12],\"force\":false,\"result_format\":\"json\",\"result_type\":\"full\"},\"result_format\":\"json\",\"result_type\":\"full\"}",
+    "cache_timeout": null,
+    "uuid": "a6c16059-bf86-4282-ba23-76ac5537ab8b",
+    "version": "1.0.0",
+    "dataset_uuid": "f537b145-00bd-4220-a974-ca308cef2162"
+}

@@ -1,0 +1,10 @@
+name: 'itsm_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'itsm_project'
+
+models:
+  itsm_project:
+    +schema: public
+    +materialized: table

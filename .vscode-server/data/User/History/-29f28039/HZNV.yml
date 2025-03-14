@@ -1,0 +1,12 @@
+itsm_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: ptpnaji123  # Replace with actual password
+      dbname: postgres
+      schema: public  # ✅ Make sure schema is 'public'
+      threads: 4

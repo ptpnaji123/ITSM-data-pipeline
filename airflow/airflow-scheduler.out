@@ -1,0 +1,318 @@
+[2025-03-12T08:12:39.121-1200] {executor_loader.py:258} INFO - Loaded executor: SequentialExecutor
+[2025-03-12T08:12:39.388-1200] {scheduler_job_runner.py:950} INFO - Starting the scheduler
+[2025-03-12T08:12:39.389-1200] {scheduler_job_runner.py:957} INFO - Processing each file at most -1 times
+[2025-03-12T08:12:39.395-1200] {manager.py:174} INFO - Launched DagFileProcessorManager with pid: 8973
+[2025-03-12T08:12:39.398-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:12:39.400-1200] {settings.py:63} INFO - Configured default timezone UTC
+[2025-03-12T08:12:39.430-1200] {manager.py:406} WARNING - Because we cannot use more than 1 thread (parsing_processes = 2) when using sqlite. So we set parallelism to 1.
+[2025-03-12T08:14:05.306-1200] {dag.py:4180} INFO - Setting next_dagrun for itsm_pipeline_dag to 2025-03-12 00:00:00+00:00, run_after=2025-03-13 00:00:00+00:00
+Dag run  in running state
+Dag information Queued at: 2025-03-12 20:14:05.298294+00:00 hash info: aca2d36f3e6eb4abdbfca417d29245e2
+[2025-03-12T08:14:05.846-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv scheduled__2025-03-11T00:00:00+00:00 [scheduled]>
+[2025-03-12T08:14:05.847-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T08:14:05.847-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv scheduled__2025-03-11T00:00:00+00:00 [scheduled]>
+[2025-03-12T08:14:05.850-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv scheduled__2025-03-11T00:00:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T08:14:05.851-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv', run_id='scheduled__2025-03-11T00:00:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T08:14:05.851-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv', 'scheduled__2025-03-11T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T08:14:06.088-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv', 'scheduled__2025-03-11T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T08:14:07.587-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T08:14:07.679-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T08:14:07.784-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T08:14:07.916-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T08:14:07.917-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T08:14:07.957-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T08:14:08.012-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T08:14:08.036-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv scheduled__2025-03-11T00:00:00+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T08:14:10.287-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv', run_id='scheduled__2025-03-11T00:00:00+00:00', try_number=1, map_index=-1)
+[2025-03-12T08:14:10.399-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv, run_id=scheduled__2025-03-11T00:00:00+00:00, map_index=-1, run_start_date=2025-03-12 20:14:08.275657+00:00, run_end_date=2025-03-12 20:14:09.205833+00:00, run_duration=0.930176, state=failed, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=0, job_id=9, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 20:14:05.848720+00:00, queued_by_job_id=8, pid=9081
+[2025-03-12T08:14:12.552-1200] {dagrun.py:823} ERROR - Marking run <DagRun itsm_pipeline_dag @ 2025-03-11 00:00:00+00:00: scheduled__2025-03-11T00:00:00+00:00, state:running, queued_at: 2025-03-12 20:14:05.298294+00:00. externally triggered: False> failed
+Dag run  in failure state
+Dag information:itsm_pipeline_dag Run id: scheduled__2025-03-11T00:00:00+00:00 external trigger: False
+Failed with message: task_failure
+[2025-03-12T08:14:12.552-1200] {dagrun.py:905} INFO - DagRun Finished: dag_id=itsm_pipeline_dag, execution_date=2025-03-11 00:00:00+00:00, run_id=scheduled__2025-03-11T00:00:00+00:00, run_start_date=2025-03-12 20:14:05.486209+00:00, run_end_date=2025-03-12 20:14:12.552602+00:00, run_duration=7.066393, state=failed, external_trigger=False, run_type=scheduled, data_interval_start=2025-03-11 00:00:00+00:00, data_interval_end=2025-03-12 00:00:00+00:00, dag_hash=aca2d36f3e6eb4abdbfca417d29245e2
+[2025-03-12T08:14:12.555-1200] {dag.py:4180} INFO - Setting next_dagrun for itsm_pipeline_dag to 2025-03-12 00:00:00+00:00, run_after=2025-03-13 00:00:00+00:00
+[2025-03-12T08:18:12.929-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:23:46.453-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+Dag run  in running state
+Dag information Queued at: 2025-03-12 20:26:28.847239+00:00 hash info: d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T08:26:29.859-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [scheduled]>
+[2025-03-12T08:26:29.860-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T08:26:29.860-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [scheduled]>
+[2025-03-12T08:26:29.862-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T08:26:29.863-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T20:26:28.816974+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T08:26:29.863-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T20:26:28.816974+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T08:26:30.015-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T20:26:28.816974+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T08:26:31.840-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T08:26:31.941-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T08:26:32.054-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T08:26:32.203-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T08:26:32.203-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T08:26:32.246-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T08:26:32.305-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T08:26:32.325-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T08:26:34.176-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T20:26:28.816974+00:00', try_number=1, map_index=-1)
+[2025-03-12T08:26:34.179-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T20:26:28.816974+00:00, map_index=-1, run_start_date=2025-03-12 20:26:32.496324+00:00, run_end_date=2025-03-12 20:26:33.293989+00:00, run_duration=0.797665, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=10, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 20:26:29.861188+00:00, queued_by_job_id=8, pid=9704
+[2025-03-12T08:29:20.188-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:31:38.149-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [scheduled]>
+[2025-03-12T08:31:38.150-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T08:31:38.150-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [scheduled]>
+[2025-03-12T08:31:38.153-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T08:31:38.154-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T20:26:28.816974+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T08:31:38.155-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T20:26:28.816974+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T08:31:38.402-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T20:26:28.816974+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T08:31:39.893-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T08:31:39.979-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T08:31:40.096-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T08:31:40.225-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T08:31:40.226-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T08:31:40.272-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T08:31:40.333-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T08:31:40.354-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T20:26:28.816974+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T08:31:42.408-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T20:26:28.816974+00:00', try_number=2, map_index=-1)
+[2025-03-12T08:31:42.410-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T20:26:28.816974+00:00, map_index=-1, run_start_date=2025-03-12 20:31:40.543774+00:00, run_end_date=2025-03-12 20:31:41.249195+00:00, run_duration=0.705421, state=failed, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=1, job_id=11, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 20:31:38.152088+00:00, queued_by_job_id=8, pid=9938
+[2025-03-12T08:31:44.434-1200] {dagrun.py:823} ERROR - Marking run <DagRun itsm_pipeline_dag @ 2025-03-12 20:26:28.816974+00:00: manual__2025-03-12T20:26:28.816974+00:00, state:running, queued_at: 2025-03-12 20:26:28.847239+00:00. externally triggered: True> failed
+Dag run  in failure state
+Dag information:itsm_pipeline_dag Run id: manual__2025-03-12T20:26:28.816974+00:00 external trigger: True
+Failed with message: task_failure
+[2025-03-12T08:31:44.434-1200] {dagrun.py:905} INFO - DagRun Finished: dag_id=itsm_pipeline_dag, execution_date=2025-03-12 20:26:28.816974+00:00, run_id=manual__2025-03-12T20:26:28.816974+00:00, run_start_date=2025-03-12 20:26:29.484140+00:00, run_end_date=2025-03-12 20:31:44.434729+00:00, run_duration=314.950589, state=failed, external_trigger=True, run_type=manual, data_interval_start=2025-03-11 00:00:00+00:00, data_interval_end=2025-03-12 00:00:00+00:00, dag_hash=d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T08:34:53.841-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:40:27.318-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:46:00.806-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:51:34.284-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T08:57:11.261-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+Dag run  in running state
+Dag information Queued at: 2025-03-12 21:00:17.429305+00:00 hash info: d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:00:18.533-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [scheduled]>
+[2025-03-12T09:00:18.534-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:00:18.534-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [scheduled]>
+[2025-03-12T09:00:18.536-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:00:18.537-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:00:17.407207+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:00:18.537-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:00:17.407207+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:00:18.689-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:00:17.407207+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:00:20.315-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:00:20.413-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:00:20.523-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:00:20.671-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:00:20.671-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:00:20.724-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:00:20.784-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:00:20.807-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:00:24.677-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:00:17.407207+00:00', try_number=1, map_index=-1)
+[2025-03-12T09:00:24.679-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:00:17.407207+00:00, map_index=-1, run_start_date=2025-03-12 21:00:21.030202+00:00, run_end_date=2025-03-12 21:00:23.753396+00:00, run_duration=2.723194, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=12, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:00:18.535367+00:00, queued_by_job_id=8, pid=11478
+[2025-03-12T09:02:45.323-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+Dag run  in running state
+Dag information Queued at: 2025-03-12 21:04:41.367233+00:00 hash info: d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:04:43.026-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [scheduled]>
+[2025-03-12T09:04:43.027-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:04:43.027-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [scheduled]>
+[2025-03-12T09:04:43.028-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:04:43.029-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:04:41.341740+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:04:43.029-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:04:41.341740+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:04:43.224-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:04:41.341740+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:04:44.808-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:04:44.903-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:04:45.024-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:04:45.172-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:04:45.173-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:04:45.223-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:04:45.286-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:04:45.309-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:04:47.586-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:04:41.341740+00:00', try_number=1, map_index=-1)
+[2025-03-12T09:04:47.589-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:04:41.341740+00:00, map_index=-1, run_start_date=2025-03-12 21:04:45.581768+00:00, run_end_date=2025-03-12 21:04:46.479179+00:00, run_duration=0.897411, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=13, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:04:43.027799+00:00, queued_by_job_id=8, pid=11687
+[2025-03-12T09:05:24.226-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [scheduled]>
+[2025-03-12T09:05:24.227-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:05:24.227-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [scheduled]>
+[2025-03-12T09:05:24.228-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:05:24.228-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:00:17.407207+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:05:24.229-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:00:17.407207+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:05:24.438-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:00:17.407207+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:05:26.057-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:05:26.161-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:05:26.276-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:05:26.418-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:05:26.419-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:05:26.464-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:05:26.532-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:05:26.551-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:00:17.407207+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:05:32.541-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:00:17.407207+00:00', try_number=2, map_index=-1)
+[2025-03-12T09:05:32.544-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:00:17.407207+00:00, map_index=-1, run_start_date=2025-03-12 21:05:26.772880+00:00, run_end_date=2025-03-12 21:05:27.526615+00:00, run_duration=0.753735, state=failed, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=1, job_id=14, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:05:24.227709+00:00, queued_by_job_id=8, pid=11725
+[2025-03-12T09:05:34.782-1200] {dagrun.py:823} ERROR - Marking run <DagRun itsm_pipeline_dag @ 2025-03-12 21:00:17.407207+00:00: manual__2025-03-12T21:00:17.407207+00:00, state:running, queued_at: 2025-03-12 21:00:17.429305+00:00. externally triggered: True> failed
+Dag run  in failure state
+Dag information:itsm_pipeline_dag Run id: manual__2025-03-12T21:00:17.407207+00:00 external trigger: True
+Failed with message: task_failure
+[2025-03-12T09:05:34.782-1200] {dagrun.py:905} INFO - DagRun Finished: dag_id=itsm_pipeline_dag, execution_date=2025-03-12 21:00:17.407207+00:00, run_id=manual__2025-03-12T21:00:17.407207+00:00, run_start_date=2025-03-12 21:00:18.199653+00:00, run_end_date=2025-03-12 21:05:34.782516+00:00, run_duration=316.582863, state=failed, external_trigger=True, run_type=manual, data_interval_start=2025-03-11 00:00:00+00:00, data_interval_end=2025-03-12 00:00:00+00:00, dag_hash=d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:08:19.076-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T09:09:47.091-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [scheduled]>
+[2025-03-12T09:09:47.091-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:09:47.091-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [scheduled]>
+[2025-03-12T09:09:47.092-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:09:47.093-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:04:41.341740+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:09:47.093-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:04:41.341740+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:09:47.332-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:04:41.341740+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:09:48.900-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:09:49.001-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:09:49.093-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:09:49.248-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:09:49.248-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:09:49.303-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:09:49.369-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:09:49.392-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:04:41.341740+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:09:51.519-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:04:41.341740+00:00', try_number=2, map_index=-1)
+[2025-03-12T09:09:51.522-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:04:41.341740+00:00, map_index=-1, run_start_date=2025-03-12 21:09:49.654346+00:00, run_end_date=2025-03-12 21:09:50.373126+00:00, run_duration=0.71878, state=failed, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=1, job_id=15, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:09:47.092141+00:00, queued_by_job_id=8, pid=11981
+[2025-03-12T09:09:53.577-1200] {dagrun.py:823} ERROR - Marking run <DagRun itsm_pipeline_dag @ 2025-03-12 21:04:41.341740+00:00: manual__2025-03-12T21:04:41.341740+00:00, state:running, queued_at: 2025-03-12 21:04:41.367233+00:00. externally triggered: True> failed
+Dag run  in failure state
+Dag information:itsm_pipeline_dag Run id: manual__2025-03-12T21:04:41.341740+00:00 external trigger: True
+Failed with message: task_failure
+[2025-03-12T09:09:53.578-1200] {dagrun.py:905} INFO - DagRun Finished: dag_id=itsm_pipeline_dag, execution_date=2025-03-12 21:04:41.341740+00:00, run_id=manual__2025-03-12T21:04:41.341740+00:00, run_start_date=2025-03-12 21:04:42.624510+00:00, run_end_date=2025-03-12 21:09:53.578030+00:00, run_duration=310.95352, state=failed, external_trigger=True, run_type=manual, data_interval_start=2025-03-11 00:00:00+00:00, data_interval_end=2025-03-12 00:00:00+00:00, dag_hash=d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:13:52.790-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+Dag run  in running state
+Dag information Queued at: 2025-03-12 21:18:10.527483+00:00 hash info: d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:18:11.811-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:18:10.516693+00:00 [scheduled]>
+[2025-03-12T09:18:11.812-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:18:11.812-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:18:10.516693+00:00 [scheduled]>
+[2025-03-12T09:18:11.813-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:18:10.516693+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:18:11.814-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:18:10.516693+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:18:11.814-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:18:10.516693+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:18:11.994-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:18:10.516693+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:18:13.923-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:18:14.022-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:18:14.164-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:18:14.316-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:18:14.317-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:18:14.364-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:18:15.397-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:18:15.421-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:18:10.516693+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:18:21.733-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:18:10.516693+00:00', try_number=1, map_index=-1)
+[2025-03-12T09:18:21.736-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:18:10.516693+00:00, map_index=-1, run_start_date=2025-03-12 21:18:18.157322+00:00, run_end_date=2025-03-12 21:18:20.510174+00:00, run_duration=2.352852, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=17, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:18:11.813066+00:00, queued_by_job_id=8, pid=15366
+[2025-03-12T09:19:26.334-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+Dag run  in running state
+Dag information Queued at: 2025-03-12 21:21:09.614090+00:00 hash info: d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:21:10.533-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:21:09.607496+00:00 [scheduled]>
+[2025-03-12T09:21:10.534-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:21:10.534-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:21:09.607496+00:00 [scheduled]>
+[2025-03-12T09:21:10.535-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:21:09.607496+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:21:10.536-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:21:09.607496+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:21:10.536-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:21:09.607496+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:21:10.722-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:21:09.607496+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:21:12.487-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:21:12.621-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:21:12.732-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:21:13.147-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:21:13.147-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:21:13.194-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:21:13.495-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:21:13.522-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:21:09.607496+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:21:18.205-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:21:09.607496+00:00', try_number=1, map_index=-1)
+[2025-03-12T09:21:18.440-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:21:09.607496+00:00, map_index=-1, run_start_date=2025-03-12 21:21:14.087027+00:00, run_end_date=2025-03-12 21:21:16.570558+00:00, run_duration=2.483531, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=19, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:21:10.534968+00:00, queued_by_job_id=8, pid=15599
+Dag run  in running state
+Dag information Queued at: 2025-03-12 21:23:11.969051+00:00 hash info: d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:23:13.409-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:23:11.956680+00:00 [scheduled]>
+[2025-03-12T09:23:13.410-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:23:13.410-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:23:11.956680+00:00 [scheduled]>
+[2025-03-12T09:23:13.412-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:23:11.956680+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:23:13.412-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:23:11.956680+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:23:13.412-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:23:11.956680+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:23:13.657-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:23:11.956680+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:23:18.873-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:23:18.972-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:23:19.084-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:23:19.255-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:23:19.255-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:23:19.304-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:23:19.639-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:23:20.005-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:23:11.956680+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:23:23.545-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:23:11.956680+00:00', try_number=1, map_index=-1)
+[2025-03-12T09:23:23.548-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:23:11.956680+00:00, map_index=-1, run_start_date=2025-03-12 21:23:20.554894+00:00, run_end_date=2025-03-12 21:23:21.678187+00:00, run_duration=1.123293, state=up_for_retry, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=20, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:23:13.411237+00:00, queued_by_job_id=8, pid=15815
+[2025-03-12T09:24:59.759-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T09:28:20.807-1200] {dagrun.py:823} ERROR - Marking run <DagRun itsm_pipeline_dag @ 2025-03-12 21:28:01.394279+00:00: manual__2025-03-12T21:28:01.394279+00:00, state:running, queued_at: 2025-03-12 21:28:01.401936+00:00. externally triggered: True> failed
+Dag run  in failure state
+Dag information:itsm_pipeline_dag Run id: manual__2025-03-12T21:28:01.394279+00:00 external trigger: True
+Failed with message: task_failure
+[2025-03-12T09:28:20.807-1200] {dagrun.py:905} INFO - DagRun Finished: dag_id=itsm_pipeline_dag, execution_date=2025-03-12 21:28:01.394279+00:00, run_id=manual__2025-03-12T21:28:01.394279+00:00, run_start_date=2025-03-12 21:28:04.526387+00:00, run_end_date=2025-03-12 21:28:20.807923+00:00, run_duration=16.281536, state=failed, external_trigger=True, run_type=manual, data_interval_start=2025-03-11 00:00:00+00:00, data_interval_end=2025-03-12 00:00:00+00:00, dag_hash=d7dec7d9aef533e7d42e69cea383b34e
+[2025-03-12T09:30:27.005-1200] {scheduler_job_runner.py:435} INFO - 1 tasks up for execution:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:25:17.468717+00:00 [scheduled]>
+[2025-03-12T09:30:27.006-1200] {scheduler_job_runner.py:507} INFO - DAG itsm_pipeline_dag has 0/16 running and queued tasks
+[2025-03-12T09:30:27.006-1200] {scheduler_job_runner.py:646} INFO - Setting the following tasks to queued state:
+	<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:25:17.468717+00:00 [scheduled]>
+[2025-03-12T09:30:27.007-1200] {scheduler_job_runner.py:748} INFO - Trying to enqueue tasks: [<TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:25:17.468717+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+[2025-03-12T09:30:27.007-1200] {scheduler_job_runner.py:692} INFO - Sending TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:25:17.468717+00:00', try_number=2, map_index=-1) to SequentialExecutor with priority 3 and queue default
+[2025-03-12T09:30:27.007-1200] {base_executor.py:169} INFO - Adding to queue: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:25:17.468717+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:30:27.230-1200] {sequential_executor.py:84} INFO - Executing command: ['airflow', 'tasks', 'run', 'itsm_pipeline_dag', 'ingest_csv_to_postgres', 'manual__2025-03-12T21:25:17.468717+00:00', '--local', '--subdir', 'DAGS_FOLDER/itsm_pipeline_dag.py']
+[2025-03-12T09:30:32.519-1200] {dagbag.py:588} INFO - Filling up the DagBag from /home/ptpnaji123/airflow/dags/itsm_pipeline_dag.py
+[2025-03-12T09:30:32.608-1200] {example_kubernetes_executor.py:39} WARNING - The example_kubernetes_executor example DAG requires the kubernetes provider. Please install it with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:30:32.725-1200] {example_python_decorator.py:80} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:30:33.090-1200] {example_local_kubernetes_executor.py:40} WARNING - Could not import DAGs in example_local_kubernetes_executor.py
+Traceback (most recent call last):
+  File "/home/ptpnaji123/airflow/airflow-env/lib/python3.12/site-packages/airflow/example_dags/example_local_kubernetes_executor.py", line 38, in <module>
+    from kubernetes.client import models as k8s
+ModuleNotFoundError: No module named 'kubernetes'
+[2025-03-12T09:30:33.091-1200] {example_local_kubernetes_executor.py:41} WARNING - Install Kubernetes dependencies with: pip install apache-airflow[cncf.kubernetes]
+[2025-03-12T09:30:33.136-1200] {example_python_operator.py:93} WARNING - The virtalenv_python example task requires virtualenv, please install it.
+[2025-03-12T09:30:33.436-1200] {tutorial_taskflow_api_virtualenv.py:29} WARNING - The tutorial_taskflow_api_virtualenv example DAG requires virtualenv, please install it.
+[2025-03-12T09:30:34.722-1200] {task_command.py:467} INFO - Running <TaskInstance: itsm_pipeline_dag.ingest_csv_to_postgres manual__2025-03-12T21:25:17.468717+00:00 [queued]> on host DESKTOP-KFL7LN6.
+[2025-03-12T09:30:41.217-1200] {scheduler_job_runner.py:776} INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='itsm_pipeline_dag', task_id='ingest_csv_to_postgres', run_id='manual__2025-03-12T21:25:17.468717+00:00', try_number=2, map_index=-1)
+[2025-03-12T09:30:41.400-1200] {scheduler_job_runner.py:813} INFO - TaskInstance Finished: dag_id=itsm_pipeline_dag, task_id=ingest_csv_to_postgres, run_id=manual__2025-03-12T21:25:17.468717+00:00, map_index=-1, run_start_date=2025-03-12 21:30:35.364072+00:00, run_end_date=2025-03-12 21:30:39.243750+00:00, run_duration=3.879678, state=failed, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=2, max_tries=1, job_id=29, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-03-12 21:30:27.006826+00:00, queued_by_job_id=8, pid=16672
+[2025-03-12T09:30:41.621-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T09:36:15.131-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T09:41:35.323-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs
+[2025-03-12T09:47:07.787-1200] {scheduler_job_runner.py:1949} INFO - Adopting or resetting orphaned tasks for active dag runs

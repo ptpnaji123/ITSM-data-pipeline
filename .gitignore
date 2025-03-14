@@ -1,0 +1,19 @@
+# Ignore Python & Airflow files
+__pycache__/
+*.pyc
+*.pyo
+logs/
+*.log
+.airflowenv
+
+# Ignore DBT compiled files
+dbt/itsm_project/target/
+dbt/dbt_packages/
+
+# Ignore Superset Virtual Environment
+superset-env/
+
+# Ignore Credentials (If any)
+.env
+secrets.json
+

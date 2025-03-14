@@ -1,0 +1,12 @@
+itsm_project:
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: postgres
+      password: ptpnaji123
+      dbname: postgres
+      schema: public
+      threads: 4
+  target: dev
