@@ -1,0 +1,29 @@
+# Core dependencies
+python-dotenv
+pandas
+numpy
+sqlalchemy
+psycopg2-binary
+requests
+
+# Apache Airflow dependencies
+apache-airflow==2.6.3
+apache-airflow-providers-postgres
+
+# DBT (Data Build Tool) dependencies
+dbt-core==1.5.11
+dbt-postgres==1.5.11
+
+# Apache Superset dependencies
+apache-superset==4.1.1
+flask
+flask-caching
+flask-migrate
+flask-wtf
+
+# Visualization dependencies
+matplotlib
+seaborn
+
+# Additional utilities
+gunicorn
